@@ -1,0 +1,14 @@
+<?php
+include "../koneksi.php";
+
+$nis = $_GET['nis'];
+
+$query = mysqli_query($koneksi, "DELETE FROM siswa WHERE nis='$nis'");
+
+if($query){
+    header("location:../index.php?page=siswa/index");
+    exit;
+}else{
+    echo "Data gagal dihapus";
+}
+?>
